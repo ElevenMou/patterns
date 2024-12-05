@@ -1,15 +1,17 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
-const Dotenv = require("dotenv-webpack");
 
 const deps = require("./package.json").dependencies;
 
 const printCompilationMessage = require("./compilation.config.js");
 
 module.exports = (_, argv) => ({
+  mode: "development",
+  entry: "./src/index.ts",
   output: {
-    publicPath: "http://localhost:8084/",
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
 
   resolve: {
@@ -70,6 +72,5 @@ module.exports = (_, argv) => ({
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-    new Dotenv(),
   ],
 });
