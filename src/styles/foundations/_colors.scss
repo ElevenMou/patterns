@@ -1,0 +1,22 @@
+/* ---------------------------------------------------------------------------- */
+/* Color - Brand                                                                */
+/* ---------------------------------------------------------------------------- */
+/// Predefined colors
+$colors-brand: "primary-1" #fefaf6, "primary-2" #fdf0e3, "primary-3" #fad6b4,
+  "primary-4" #f6b77c, "primary-5" #f29844, "primary-6" #d5863c,
+  "primary-7" #bd7735, "primary-8" #9d632c, "primary-9" #613d1b;
+
+/* ---------------------------------------------------------------------------- */
+/* Color - Neutral                                                              */
+/* ---------------------------------------------------------------------------- */
+/// Predefined Colors - Neutral
+$colors-neutral: "0" #ffffff, "1" #f8f9fa, "2" #f1f3f5, "3" #e9ecef, "4" #dee2e6,
+  "5" #ced4da, "6" #adb5bd, "7" #6a7178, "8" #4f575e, "9" #272b30, "10" #101213;
+
+/* ---------------------------------------------------------------------------- */
+/* Color - Semantic                                                             */
+/* ---------------------------------------------------------------------------- */
+/// Predefined Colors - Semantic
+$colors-semantic: "error-light" #fceaea, "error" #dc2020,
+  "warning-light" #fdf6e5, "warning" #e9a100, "success-light" #eaf3eb,
+  "success" #29823b, "info-light" #e5f5fc, "info" #017aad;

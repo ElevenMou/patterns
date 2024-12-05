@@ -1,0 +1,44 @@
+.label-input {
+  display: flex;
+  flex-direction: column;
+  &__label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  &__input {
+    min-height: 40px;
+    border: 1px solid var(--color-neutral-4);
+    border-radius: 8px;
+    padding: 12px 16px;
+    resize: vertical;
+    &:focus {
+      outline-color: var(--color-primary-5);
+    }
+    &:disabled {
+      background-color: var(--color-neutral-2);
+    }
+  }
+  &--error {
+    .label-input__label {
+      color: var(--color-error);
+    }
+    .label-input__input {
+      border-color: var(--color-error);
+    }
+  }
+  &__error {
+    color: var(--color-error);
+  }
+  &__success {
+    color: var(--color-success);
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  padding: var(--space-l) var(--space-base);
+  border-radius: 8px;
+  background-color: var(--color-background-card);
+}
