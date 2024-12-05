@@ -7,11 +7,16 @@ const deps = require("./package.json").dependencies;
 const printCompilationMessage = require("./compilation.config.js");
 
 module.exports = (_, argv) => ({
-  mode: "development",
-  entry: "./src/index.ts",
+  mode: "production",
+  entry: {
+    index: ["./src/index.ts"],
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "[name].js",
+    libraryTarget: "umd",
+    library: "@elevenmou/patterns",
+    globalObject: "this",
   },
 
   resolve: {
@@ -27,11 +32,9 @@ module.exports = (_, argv) => ({
   module: {
     rules: [
       {
-        test: /\.m?js/,
-        type: "javascript/auto",
-        resolve: {
-          fullySpecified: false,
-        },
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
       },
       {
         test: /\.(css|s[ac]ss)$/i,
@@ -39,10 +42,11 @@ module.exports = (_, argv) => ({
         include: path.resolve(__dirname, "./src/styles/style.scss"),
       },
       {
-        test: /\.(ts|tsx|js|jsx)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
+        loader: "babel-loader",
+        options: {
+          presets: ["es2015", "react", "stage-0"],
         },
       },
     ],
