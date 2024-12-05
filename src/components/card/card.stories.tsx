@@ -1,7 +1,6 @@
 import { ComponentProps } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-
-import Card from "../components/card";
+import Card from "./card";
 
 type StoryProps = ComponentProps<typeof Card>;
 

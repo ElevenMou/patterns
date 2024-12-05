@@ -1,7 +1,6 @@
 import { ComponentProps } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-
-import LabelInput from "../components/elements/label-input";
+import LabelInput from "./label-input";
 
 type StoryProps = ComponentProps<typeof LabelInput>;
 

@@ -2,7 +2,7 @@
 const path = require("path");
 
 module.exports = {
-  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: ["../src/components/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-actions",
     "@storybook/addon-viewport",
@@ -15,11 +15,18 @@ module.exports = {
     builder: "webpack5",
   },
   webpackFinal: async (config) => {
-    // Add SCSS support
     config.module.rules.push({
       test: /\.scss$/,
-      use: ["style-loader", "css-loader", "sass-loader"],
-      include: path.resolve(__dirname, "../src/styles/style.scss"),
+      use: [
+        "style-loader",
+        "css-loader",
+        {
+          loader: "sass-loader",
+          options: {
+            implementation: require("sass"),
+          },
+        },
+      ],
     });
 
     return config;

@@ -29,23 +29,3 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
-img {
-  max-width: 100%;
-}
-
-body {
-  color: var(--color-text-body);
-  background: var(--color-background);
-  padding: 0;
-  margin: 0;
-}
-
-main {
-  &:not(:has(.authentication-page)) {
-    padding: 20px 40px;
-    @media screen and (max-width: 768px) {
-      padding-inline: 20px;
-    }
-  }
-}

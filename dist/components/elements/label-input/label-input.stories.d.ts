@@ -1,10 +1,10 @@
 import { ComponentProps } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import LabelInput from "../components/elements/label-input";
-type StoryProps = ComponentProps<typeof LabelInput>;
+import LabelInput from "./label-input";
+declare type StoryProps = ComponentProps<typeof LabelInput>;
 declare const meta: Meta<StoryProps>;
 export default meta;
-type Story = StoryObj<StoryProps>;
+declare type Story = StoryObj<StoryProps>;
 export declare const Default: Story;
 export declare const Error: Story;
 export declare const Disabled: Story;
